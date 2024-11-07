@@ -1,0 +1,21 @@
+{
+    "commandline_args": null,
+    "credentials": "YOUR_CREDENTIALS",
+    "description": "",
+    "execution_timeout": 3600,
+    "id": "OHK-keqldttk",
+    "last_updated": "2024-11-07",
+    "max_retries": 0,
+    "maximum_version_required": "",
+    "minimum_version_required": "8.6",
+    "name": "Disable SElinux",
+    "remove_after_run": true,
+    "resource_technologies": [],
+    "run_with_sudo": true,
+    "script_filename": "Disable SElinux Script.py",
+    "shared": true,
+    "target_os_families": [
+        "Linux -> Oracle Enterprise Linux"
+    ],
+    "type": "Remote Script"
+}

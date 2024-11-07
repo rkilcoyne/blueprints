@@ -1,0 +1,193 @@
+{
+    "any_group_can_deploy": true,
+    "auto_historical_resources": false,
+    "deployment_items": [
+        {
+            "all_environments_enabled": false,
+            "allowed_os_families": [
+                "Oracle Enterprise Linux"
+            ],
+            "applications": null,
+            "deploy_seq": 1,
+            "description": "",
+            "environment_selection_orchestration": null,
+            "execute_in_parallel": false,
+            "hostname_template": "",
+            "id": "BDI-ebyvbzs7",
+            "name": "Docker Host",
+            "os_build": {
+                "href": "/api/v3/cmp/osBuilds/OSB-rak-4321/",
+                "title": "Oracle Enterprise Linux 8.9"
+            },
+            "restrict_applications": false,
+            "show_on_order_form": false,
+            "tier_type": "server"
+        },
+        {
+            "action_name": "Disable SElinux",
+            "continue_on_failure": false,
+            "deploy_seq": 2,
+            "description": null,
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-w3zp4hek",
+            "name": "Disable SElinux",
+            "run_on_scale_up": true,
+            "show_on_order_form": false,
+            "tier_type": "script"
+        },
+        {
+            "action_name": "Install Yum Repo",
+            "continue_on_failure": false,
+            "deploy_seq": 3,
+            "description": "",
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-nkj094xw",
+            "name": "Install Docker CE Yum Repo",
+            "parameter_defaults": [
+                {
+                    "label": "Yum Repo Url",
+                    "name": "YUM_REPO_URL_a208",
+                    "value": "https://download.docker.com/linux/centos/docker-ce.repo"
+                }
+            ],
+            "run_on_scale_up": true,
+            "show_on_order_form": false,
+            "tier_type": "script"
+        },
+        {
+            "action_name": "Install Packages",
+            "continue_on_failure": false,
+            "deploy_seq": 4,
+            "description": "",
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-svi8eck7",
+            "name": "Yum installed docker-ce and other docker support components",
+            "parameter_defaults": [
+                {
+                    "label": "Packages To Install",
+                    "name": "PACKAGES_TO_INSTALL_a205",
+                    "value": "docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
+                }
+            ],
+            "run_on_scale_up": true,
+            "show_on_order_form": false,
+            "tier_type": "script"
+        },
+        {
+            "action_name": "Enable and Start Service",
+            "continue_on_failure": false,
+            "deploy_seq": 5,
+            "description": "",
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-zx7wd5ri",
+            "name": "Enable and Start Docker",
+            "parameter_defaults": [
+                {
+                    "label": "Service Name",
+                    "name": "SERVICE_NAME_a209",
+                    "value": "docker"
+                }
+            ],
+            "run_on_scale_up": true,
+            "show_on_order_form": false,
+            "tier_type": "script"
+        },
+        {
+            "action_name": "Run Docker Container",
+            "continue_on_failure": false,
+            "deploy_seq": 6,
+            "description": "",
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-1x3tgzja",
+            "name": "Run Docker Container",
+            "parameter_defaults": [
+                {
+                    "label": "Extra Args",
+                    "name": "extra_args_a210",
+                    "value": "--env PORT=8080 -v /persist:/persist"
+                },
+                {
+                    "label": "Image",
+                    "name": "image_a210",
+                    "value": "gristlabs/grist"
+                },
+                {
+                    "label": "Name",
+                    "name": "name_a210",
+                    "value": "grist"
+                },
+                {
+                    "label": "Port Mappings",
+                    "name": "port_mappings_a210",
+                    "value": "8080:8080"
+                }
+            ],
+            "run_on_scale_up": true,
+            "show_on_order_form": false,
+            "tier_type": "script"
+        },
+        {
+            "action_name": "Set Resource URL",
+            "continue_on_failure": false,
+            "deploy_seq": 7,
+            "description": "",
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-twgxvfg4",
+            "name": "Set Resource URL",
+            "parameter_defaults": [
+                {
+                    "label": "Resource Url",
+                    "name": "RESOURCE_URL_a211",
+                    "value": "http://{{ blueprint_context.docker_host.server.ip }}:8080"
+                }
+            ],
+            "run_on_scale_up": true,
+            "show_on_order_form": false,
+            "tier_type": "plugin"
+        }
+    ],
+    "description": "",
+    "favorited": false,
+    "icon": "gristlogo_480.png",
+    "id": "BP-fvhhf9l7",
+    "is_manageable": true,
+    "is_orderable": true,
+    "labels": [
+        {
+            "color": null,
+            "id": "TAG-7978abzu",
+            "image": null,
+            "name": "PaaS",
+            "sequence": 0
+        }
+    ],
+    "last_updated": "2024-11-07",
+    "management_actions": [
+        {
+            "enabled": true,
+            "label": "Fetch Docker Logs"
+        }
+    ],
+    "maximum_version_required": "",
+    "minimum_version_required": "8.6",
+    "name": "Grist Server",
+    "resource_name_template": "grist-server-000X",
+    "resource_type": {
+        "icon": "",
+        "id": "RT-1lgdtv3l",
+        "label": "Service",
+        "lifecycle": "ACTIVE",
+        "list_view_columns": [],
+        "name": "service",
+        "plural_label": null
+    },
+    "sequence": 0,
+    "show_recipient_field_on_order_form": false,
+    "teardown_items": []
+}

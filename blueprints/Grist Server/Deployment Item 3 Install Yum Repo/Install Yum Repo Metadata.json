@@ -1,0 +1,42 @@
+{
+    "action_inputs": [
+        {
+            "allow_multiple": false,
+            "available_all_servers": false,
+            "description": null,
+            "field_dependency_controlling_set": [],
+            "field_dependency_dependent_set": [],
+            "global_options": [],
+            "hide_if_default_value": true,
+            "id": "CF-gespvhuz",
+            "label": "Yum Repo Url",
+            "name": "YUM_REPO_URL",
+            "placeholder": null,
+            "relevant_osfamilies": [],
+            "required": true,
+            "show_as_attribute": false,
+            "show_on_servers": false,
+            "type": "STR",
+            "value_pattern_string": null
+        }
+    ],
+    "commandline_args": null,
+    "credentials": "YOUR_CREDENTIALS",
+    "description": "",
+    "execution_timeout": 3600,
+    "id": "OHK-jc2ka8wp",
+    "last_updated": "2024-11-07",
+    "max_retries": 0,
+    "maximum_version_required": "",
+    "minimum_version_required": "8.6",
+    "name": "Install Yum Repo",
+    "remove_after_run": true,
+    "resource_technologies": [],
+    "run_with_sudo": false,
+    "script_filename": "Install Yum Repo Script.py",
+    "shared": true,
+    "target_os_families": [
+        "Linux -> Oracle Enterprise Linux"
+    ],
+    "type": "Remote Script"
+}
