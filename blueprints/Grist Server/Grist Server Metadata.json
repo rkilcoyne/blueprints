@@ -13,7 +13,7 @@
             "environment_selection_orchestration": null,
             "execute_in_parallel": false,
             "hostname_template": "",
-            "id": "BDI-ebyvbzs7",
+            "id": "BDI-pp9ur52k",
             "name": "Docker Host",
             "os_build": {
                 "href": "/api/v3/cmp/osBuilds/OSB-rak-4321/",
@@ -30,7 +30,7 @@
             "description": null,
             "enabled": true,
             "execute_in_parallel": false,
-            "id": "BDI-w3zp4hek",
+            "id": "BDI-t8alo6d1",
             "name": "Disable SElinux",
             "run_on_scale_up": true,
             "show_on_order_form": false,
@@ -43,7 +43,7 @@
             "description": "",
             "enabled": true,
             "execute_in_parallel": false,
-            "id": "BDI-nkj094xw",
+            "id": "BDI-eclp0y25",
             "name": "Install Docker CE Yum Repo",
             "parameter_defaults": [
                 {
@@ -63,7 +63,7 @@
             "description": "",
             "enabled": true,
             "execute_in_parallel": false,
-            "id": "BDI-svi8eck7",
+            "id": "BDI-3dty2lac",
             "name": "Yum installed docker-ce and other docker support components",
             "parameter_defaults": [
                 {
@@ -83,7 +83,7 @@
             "description": "",
             "enabled": true,
             "execute_in_parallel": false,
-            "id": "BDI-zx7wd5ri",
+            "id": "BDI-f2nnpa3b",
             "name": "Enable and Start Docker",
             "parameter_defaults": [
                 {
@@ -103,7 +103,7 @@
             "description": "",
             "enabled": true,
             "execute_in_parallel": false,
-            "id": "BDI-1x3tgzja",
+            "id": "BDI-i0hduex1",
             "name": "Run Docker Container",
             "parameter_defaults": [
                 {
@@ -138,7 +138,7 @@
             "description": "",
             "enabled": true,
             "execute_in_parallel": false,
-            "id": "BDI-twgxvfg4",
+            "id": "BDI-q28d9868",
             "name": "Set Resource URL",
             "parameter_defaults": [
                 {
@@ -154,7 +154,7 @@
     ],
     "description": "",
     "favorited": false,
-    "icon": "gristlogo_480.png",
+    "icon": "gristlogo_480_D1tI2l3.png",
     "id": "BP-fvhhf9l7",
     "is_manageable": true,
     "is_orderable": true,

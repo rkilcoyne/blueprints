@@ -17,7 +17,7 @@
             "show_as_attribute": false,
             "show_on_servers": false,
             "type": "STR",
-            "value_pattern_string": ""
+            "value_pattern_string": null
         },
         {
             "allow_multiple": false,
